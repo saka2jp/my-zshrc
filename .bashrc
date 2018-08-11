@@ -10,8 +10,7 @@ HISTFILESIZE=1000000
 
 # Alias
 alias ls='ls -F'
-alias la='ls -a'
-alias ll='ls -l'
+alias ll='ls -la'
 alias mkdir='mkdir -p'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
