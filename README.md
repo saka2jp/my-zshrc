@@ -12,11 +12,9 @@
 brew install git
 ```
 
-3. Install [Atom](https://atom.io/), [Visual Studio Code](https://code.visualstudio.com/)
+3. Install [Visual Studio Code](https://code.visualstudio.com/)
 ---
 - Settings Shell Commands with Atom, VSCode
-  - Atom
-    - Atom -> Install Sell Commands
   - VSCode
     - Command + Shift + P
     - seach "shell", install.
