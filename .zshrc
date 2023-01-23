@@ -44,8 +44,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 # sudo の後ろでコマンド名を補完する
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
@@ -147,14 +146,41 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
+# Homebrew with x86
+if (( $+commands[arch] )); then
+  alias a64="exec arch -arch arm64e '$SHELL'"
+  alias x64="exec arch -arch x86_64 '$SHELL'"
+fi
+
+function runs_on_ARM64() { [[ `uname -m` = "arm64" ]]; }
+function runs_on_X86_64() { [[ `uname -m` = "x86_64" ]]; }
+
+BREW_PATH_OPT="/opt/homebrew/bin"
+BREW_PATH_LOCAL="/usr/local/bin"
+function brew_exists_at_opt() { [[ -d ${BREW_PATH_OPT} ]]; }
+function brew_exists_at_local() { [[ -d ${BREW_PATH_LOCAL} ]]; }
+
+setopt no_global_rcs
+typeset -U path PATH
+path=($path /usr/sbin /sbin)
+
+if runs_on_ARM64; then
+  path=($BREW_PATH_OPT(N-/) $BREW_PATH_LOCAL(N-/) $path)
+else
+  path=($BREW_PATH_LOCAL(N-/) $path)
+fi
+
 #######################################
 # Plugins
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source /Users/jumpyoshim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########################################
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Go
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
@@ -182,9 +208,6 @@ eval "$(rbenv init -)"
 # export PATH="$HOME/.anyenv/bin:$PATH"
 # eval "$(anyenv init -)"
 
-# AWS CLI
-source ~/.aws_zsh_completer.sh
-
 # direnv
 hash direnv 2>/dev/null && eval "$(direnv hook zsh)"
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
@@ -192,6 +215,12 @@ hash direnv 2>/dev/null && eval "$(direnv hook zsh)"
 # sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin/:$PATH"
 
-#######################################
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-# vim:set ft=zsh:
+# Google Cloud SDK.
+if [ -f '/Users/jumpyoshim/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jumpyoshim/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/jumpyoshim/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jumpyoshim/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+#######################################

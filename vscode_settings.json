@@ -1,111 +1,153 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.tabSize": 2,
-    "editor.snippetSuggestions": "top",
-    "editor.minimap.enabled": false,
-    "kite.showWelcomeNotificationOnStartup": false,
-    "go.gopath": "/Users/jumpyoshim/go",
-    "go.useLanguageServer": true,
-    "go.formatTool": "goimports",
-    "go.toolsEnvVars": {
-        "GO111MODULE": "on"
-    },
-    "aws.samcli.location": "/Users/jumpyoshim/Library/Python/3.7/bin/sam",
-    "workbench.activityBar.visible": true,
-    "workbench.sideBar.location": "left",
-    "workbench.editor.showTabs": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.formatOnSave": false,
-        "editor.defaultFormatter": "HookyQR.beautify"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "cSpell.userWords": [
-        "Cognito",
-        "HGET",
-        "HSET",
-        "Lifecycle",
-        "Pageview",
-        "Repo",
-        "Sfdc",
-        "UIDs",
-        "Warnf",
-        "accs",
-        "aggs",
-        "amazonaws",
-        "amazonlinux",
-        "apigateway",
-        "awsconfig",
-        "boto",
-        "buildspec",
-        "cloudformation",
-        "cloudwatch",
-        "codebuild",
-        "codepipeline",
-        "devops",
-        "dynamodb",
-        "dynamodbattribute",
-        "firehose",
-        "getenv",
-        "gitsecret",
-        "goimports",
-        "hcacl",
-        "hcauthorizer",
-        "hccache",
-        "hccontext",
-        "hcctx",
-        "hcdomain",
-        "hcdynamodb",
-        "hcdynamodbtest",
-        "hcelasticsearch",
-        "hcenv",
-        "hcerror",
-        "hceventdynamodb",
-        "hceventlog",
-        "hclambda",
-        "hclogger",
-        "hcset",
-        "hicustomer",
-        "hoge",
-        "jumpyoshim",
-        "kibana",
-        "moto",
-        "oneof",
-        "openapi",
-        "pytest",
-        "reqs",
-        "secretsmanager",
-        "subnet",
-        "upserts",
-        "uuid",
-        "webhook",
-        "xerrors",
-        "xray"
-    ],
-    "python.formatting.provider": "autopep8",
-    "kite.showGoBetaNotification": false,
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.formatOnPaste": true,
-    "extensions.ignoreRecommendations": false,
-    "go.autocompleteUnimportedPackages": true,
-    "workbench.colorTheme": "Dracula",
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "files.associations": {
-        "*.go": "go"
-    },
-    "files.insertFinalNewline": true,
-    "go.toolsManagement.autoUpdate": true
+	"[go]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "golang.go",
+		"editor.insertSpaces": false
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "HookyQR.beautify",
+		"editor.formatOnSave": false
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "HookyQR.beautify"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"cSpell.userWords": [
+		"Cognito",
+		"HGET",
+		"HSET",
+		"Lifecycle",
+		"Pageview",
+		"Repo",
+		"Sfdc",
+		"UIDs",
+		"Warnf",
+		"accs",
+		"aggs",
+		"amazonaws",
+		"amazonlinux",
+		"apigateway",
+		"awsconfig",
+		"boto",
+		"buildspec",
+		"cloudformation",
+		"cloudwatch",
+		"codebuild",
+		"codepipeline",
+		"devops",
+		"dynamodb",
+		"dynamodbattribute",
+		"firehose",
+		"getenv",
+		"gitsecret",
+		"goimports",
+		"hcacl",
+		"hcauthorizer",
+		"hccache",
+		"hccontext",
+		"hcctx",
+		"hcdomain",
+		"hcdynamodb",
+		"hcdynamodbtest",
+		"hcelasticsearch",
+		"hcenv",
+		"hcerror",
+		"hceventdynamodb",
+		"hceventlog",
+		"hclambda",
+		"hclogger",
+		"hcset",
+		"hicustomer",
+		"hoge",
+		"jumpyoshim",
+		"kibana",
+		"moto",
+		"oneof",
+		"openapi",
+		"pytest",
+		"reqs",
+		"secretsmanager",
+		"subnet",
+		"upserts",
+		"uuid",
+		"webhook",
+		"xerrors",
+		"xray"
+	],
+	"editor.formatOnPaste": true,
+	"editor.minimap.enabled": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.snippetSuggestions": "top",
+	"editor.tabSize": 2,
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"extensions.ignoreRecommendations": false,
+	"files.associations": {
+		"*.go": "go"
+	},
+	"files.exclude": {
+		"/.git": true,
+		"/.DS_Store": true,
+		"/node_modules": true,
+		"/node_modules/": true
+	},
+	"files.insertFinalNewline": true,
+	"files.watcherExclude": {
+		"/node_modules/": true
+	},
+	"go.autocompleteUnimportedPackages": true,
+	"go.formatTool": "default",
+	"go.gopath": "/Users/jumpyoshim/go",
+	"go.lintFlags": [
+		"--fast"
+	],
+	"go.lintOnSave": "package",
+	"go.lintTool": "golangci-lint",
+	"go.toolsEnvVars": {
+		"GO111MODULE": "on"
+	},
+	"go.toolsManagement.autoUpdate": true,
+	"go.useLanguageServer": true,
+	"gopls": {
+		"formatting.local": "github.com/workstyle-lab/pod-backend",
+		"formatting.gofumpt": true,
+		"ui.diagnostic.staticcheck": true,
+		"ui.semanticTokens": true
+	},
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"python.formatting.provider": "autopep8",
+	"redhat.telemetry.enabled": true,
+	"search.exclude": {
+		"/node_modules": true
+	},
+	"typescript.format.insertSpaceAfterConstructor": true,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+	"typescript.format.insertSpaceAfterTypeAssertion": true,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"window.zoomLevel": 1,
+	"workbench.activityBar.visible": true,
+	"workbench.colorTheme": "Dracula",
+	"workbench.editor.showTabs": true,
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
+	"workbench.sideBar.location": "left",
+	"workbench.startupEditor": "newUntitledFile",
+	"yaml.schemas": {}
 }
-
