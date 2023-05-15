@@ -108,6 +108,8 @@ setopt extended_glob
 # ワイルドカードを有効にする
 setopt nonomatch
 
+export PS1="%~ > "
+
 ########################################
 # キーバインド
 
@@ -197,12 +199,11 @@ eval "$(pyenv init -)"
 
 # Node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
-export PATH=$PATH:`npm bin -g`
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # anyenv
 # export PATH="$HOME/.anyenv/bin:$PATH"
