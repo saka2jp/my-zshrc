@@ -224,4 +224,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 if [ -f '/Users/jumpyoshim/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jumpyoshim/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/jumpyoshim/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jumpyoshim/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+# asdf
+. "$HOME/.asdf/asdf.sh"
+
 #######################################
